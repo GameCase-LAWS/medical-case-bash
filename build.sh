@@ -56,7 +56,7 @@ then
   cp -r files/assets $PROJECT_NAME/src
 
   # Deletar pasta .git para evitar incidentes
-  rm -r $PROJECT_NAME/.git
+  rm -f -r $PROJECT_NAME/.git
 fi
 
 echo "Done! =)"
