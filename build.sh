@@ -34,7 +34,7 @@ then
   cp -r files/assets $PROJECT_NAME/app
 
   # Deletar pasta .git para evitar incidentes
-  rm -r $PROJECT_NAME/.git
+  rm -f -r $PROJECT_NAME/.git
 fi
 
 if [ "$PROJECT_NAME" = "dental-case-web" ];
