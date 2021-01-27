@@ -32,6 +32,9 @@ then
 
   # Substituir imagens
   cp -r files/assets $PROJECT_NAME/app
+
+  # Deletar pasta .git para evitar incidentes
+  rm -r $PROJECT_NAME/.git
 fi
 
 if [ "$PROJECT_NAME" = "dental-case-web" ];
@@ -51,6 +54,9 @@ then
 
   # Substituir imagens
   cp -r files/assets $PROJECT_NAME/src
+
+  # Deletar pasta .git para evitar incidentes
+  rm -r $PROJECT_NAME/.git
 fi
 
 echo "Done! =)"
