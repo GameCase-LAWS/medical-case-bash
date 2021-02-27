@@ -23,9 +23,12 @@ git clone https://github.com/GameCase-LAWS/$PROJECT_NAME.git
 if [ "$PROJECT_NAME" = "dental-case-app" ];
 then
   # Replace 'dental' term for 'medical'
-  sed -i 's/dental/medical/g' $PROJECT_NAME/app.json
-  sed -i 's/Dental/Medical/g' $PROJECT_NAME/app.json
-  sed -i 's/DENTAL/MEDICAL/g' $PROJECT_NAME/app.json
+  sed '.bak' -i 's/dental/medical/g' $PROJECT_NAME/app.json
+  sed '.bak' -i 's/Dental/Medical/g' $PROJECT_NAME/app.json
+  sed '.bak' -i 's/DENTAL/MEDICAL/g' $PROJECT_NAME/app.json
+
+  # Modificar android para ios em app.json
+  sed '.bak' -i 's/android-icon/ios-icon/g' $opt/app.json
 
   # Substituir arquivos de configuração
   cp -r files/config $PROJECT_NAME/app
@@ -40,11 +43,11 @@ fi
 if [ "$PROJECT_NAME" = "dental-case-web" ];
 then
   # Replace 'dental' term for 'medical'
-  sed -i 's/dental/medical/g' $PROJECT_NAME/package.json
-  sed -i 's/Dental/Medical/g' $PROJECT_NAME/package.json
-  sed -i 's/DENTAL/MEDICAL/g' $PROJECT_NAME/package.json
+  sed '.bak' -i 's/dental/medical/g' $PROJECT_NAME/package.json
+  sed '.bak' -i 's/Dental/Medical/g' $PROJECT_NAME/package.json
+  sed '.bak' -i 's/DENTAL/MEDICAL/g' $PROJECT_NAME/package.json
 
-  sed -i 's/Dental/Medical/g' $PROJECT_NAME/public/index.html
+  sed '.bak' -i 's/Dental/Medical/g' $PROJECT_NAME/public/index.html
 
   # Substituir favicon
   cp -r files/assets/icons/favicon.png $PROJECT_NAME/public/favicon.png
