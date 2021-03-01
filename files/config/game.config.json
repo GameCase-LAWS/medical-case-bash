@@ -2,7 +2,8 @@
   "gameCode": 0,
   "gameName": "Medical Case",
   "gameProfessionalName": "Médico(a)",
-  "gameCaseUrl": "https://gamecase.games",
+  "gameCaseUrl": "//gamecase.games",
+  "gameCaseUrlHttp": "http://gamecase.games",
   "caseRequiredImages": [
     "consultorio-vista-frontal",
     "paciente-exame",
