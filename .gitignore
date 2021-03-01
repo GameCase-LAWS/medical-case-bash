@@ -1,4 +1,7 @@
 dental-case-app/
 dental-case-web/
 
+app/
+web/
+
 .history

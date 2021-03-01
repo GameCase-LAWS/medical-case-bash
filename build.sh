@@ -15,52 +15,53 @@ select opt in "${options[@]}"; do
 done
 
 # Delete previous project folder
-rm -f -r $PROJECT_NAME
+rm -f -r $opt
 
 # Clone 'Dental Case' git repository
-git clone https://github.com/GameCase-LAWS/$PROJECT_NAME.git
+git clone https://github.com/GameCase-LAWS/$PROJECT_NAME.git $opt
 
-if [ "$PROJECT_NAME" = "dental-case-app" ];
+if [ "$opt" = "app" ];
 then
-  # Replace 'dental' term for 'medical'
-  sed -i 's/dental/medical/g' $PROJECT_NAME/app.json
-  sed -i 's/Dental/Medical/g' $PROJECT_NAME/app.json
-  sed -i 's/DENTAL/MEDICAL/g' $PROJECT_NAME/app.json
+  # Replace 'dental' term for 'clinical'
+  sed -i 's/dental/medical/g' $opt/app.json
+  sed -i 's/Dental/Medical/g' $opt/app.json
+  sed -i 's/DENTAL/MEDICAL/g' $opt/app.json
 
   # Substituir arquivos de configuração
-  cp -r files/config $PROJECT_NAME/app
+  cp -r files/config $opt/app
 
   # Substituir imagens
-  cp -r files/assets $PROJECT_NAME/app
+  cp -r files/assets $opt/app
 
   # Deletar pasta .git para evitar incidentes
-  rm -f -r $PROJECT_NAME/.git
+  rm -f -r $opt/.git
 fi
 
-if [ "$PROJECT_NAME" = "dental-case-web" ];
+if [ "$opt" = "web" ];
 then
-  # Replace 'dental' term for 'medical'
-  sed -i 's/dental/medical/g' $PROJECT_NAME/package.json
-  sed -i 's/Dental/Medical/g' $PROJECT_NAME/package.json
-  sed -i 's/DENTAL/MEDICAL/g' $PROJECT_NAME/package.json
+  # Replace 'dental' term for 'clinical'
+  sed -i 's/dental/medical/g' $opt/package.json
+  sed -i 's/Dental/Medical/g' $opt/package.json
+  sed -i 's/DENTAL/MEDICAL/g' $opt/package.json
 
-  sed -i 's/Dental/Medical/g' $PROJECT_NAME/public/index.html
+  sed -i 's/Dental/Clinical/g' $opt/public/index.html
 
   # Substituir favicon
-  cp -r files/assets/icons/favicon.png $PROJECT_NAME/public/favicon.png
+  cp -r files/assets/icons/favicon.png $opt/public/favicon.png
 
   # Substituir arquivos de configuração
-  cp -r files/config $PROJECT_NAME/src
+  cp -r files/config $opt/src
 
   # Substituir imagens
-  cp -r files/assets $PROJECT_NAME/src
+  cp -r files/assets $opt/src
 
   # Deletar pasta .git para evitar incidentes
-  rm -f -r $PROJECT_NAME/.git
+  rm -f -r $opt/.git
 fi
 
-echo 'Entrando em ' $opt
+echo 'Entrando em' $opt
 cd $opt/
+
 echo "Instalando os packages..."
 npm install
 
