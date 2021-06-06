@@ -44,7 +44,7 @@ then
   sed -i 's/Dental/Medical/g' $opt/package.json
   sed -i 's/DENTAL/MEDICAL/g' $opt/package.json
 
-  sed -i 's/Dental/Clinical/g' $opt/public/index.html
+  sed -i 's/Dental/Medical/g' $opt/public/index.html
 
   # Substituir favicon
   cp -r files/assets/icons/favicon.png $opt/public/favicon.png

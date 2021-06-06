@@ -3,12 +3,14 @@
   "gameName": "Medical Case",
   "gameProfessionalName": "Médico(a)",
   "gameCaseUrl": "//gamecase.games",
+  "gameCaseApiUrl": "//api.gamecase.games",
   "gameCaseUrlHttp": "http://gamecase.games",
   "caseRequiredImages": [
-    "consultorio-vista-frontal",
+    "cenario",
+    "cenario-exame",
+    "paciente",
     "paciente-exame",
     "paciente-prontuario",
-    "consultorio-vista-lateral",
-    "paciente"
+    "paciente-card"
   ]
 }
