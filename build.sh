@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Get project name
-PROJECT=`echo $(dirname $(realpath $0)) | sed -r "s@^($(dirname $(dirname $0)))/@@" | sed -r "s@-@@g" | sed -r "s@bash@@g"`
+PROJECT=`echo $(dirname $(realpath $0)) | sed -r "s@^($(dirname $(dirname $(realpath $0)))/)@@" | sed -r "s@-@@g" | sed -r "s@bash@@g"`
 
 echo 'Select an option and press Enter: '
 options=("web" "app")
