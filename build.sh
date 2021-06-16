@@ -56,6 +56,9 @@ fi
 
 if [ "$opt" = "web" ];
 then
+
+  echo -e "src/\nbuild/\n*.js" >> $opt/.eslintignore
+
   # Replace 'dental' term for 'clinical'
   sed -i 's/dental/medical/g' $opt/package.json
   sed -i 's/Dental/Medical/g' $opt/package.json
